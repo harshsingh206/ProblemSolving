@@ -1,4 +1,22 @@
 class StarRating extends HTMLElement {
+
+    constructor () {
+        super();
+        this.number = this.number;
+        this.addEventListener('mousemove', e =>{
+            let box = this.getBoundingClientRect(),
+            starIndex = Math.floor((e.pageX - box.left) / box.width * this.stars.length);
+            this.highlight(starIndex);
+        })
+        this.addEventListener('mouseout', e=>{
+            this.value = this.value;
+        })
+        this.addEventListener('click', e=>{
+            let box = this.getBoundingClientRect(),
+            starIndex = Math.floor((e.pageX - box.left) / box.width * this.stars.length);
+            this.value = starIndex + 1;
+        })
+    }
     get value(){
         return this.getAttribute('value');
     }
@@ -27,23 +45,7 @@ class StarRating extends HTMLElement {
         this.stars.forEach((star, i) => {
             star.classList.toggle('full', i<=index);
         })
-    }
-    constructor () {
-        super();
-        this.number = this.number;
-        this.addEventListener('mousemove', e =>{
-            let box = this.getBoundingClientRect(),
-            starIndex = Math.floor((e.pageX - box.left) / box.width * this.stars.length);
-            this.highlight(starIndex);
-        })
-        this.addEventListener('mouseout', e=>{
-            this.value = this.value;
-        })
-        this.addEventListener('click', e=>{
-            let box = this.getBoundingClientRect(),
-            starIndex = Math.floor((e.pageX - box.left) / box.width * this.stars.length);
-            this.value = starIndex + 1;
-        })
-    }
+    }   
+    
 }
 window.customElements.define('x-star-rating', StarRating); 
