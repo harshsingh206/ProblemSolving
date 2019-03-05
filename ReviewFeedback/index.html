@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    .checked{
+        color: #fd0;
+    }
+</style>
+<body>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="1one" style="font-size:40px;cursor: pointer"></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="2one" style="font-size:40px;cursor: pointer"></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="3one" style="font-size:40px;cursor: pointer"></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="4one" style="font-size:40px;cursor: pointer"></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="5one" style="font-size:40px;cursor: pointer"></span>
+<br/><br/>
+<textarea class="form-control" style="width:25%" id="textArea1" rows="3" placeholder="Enter your comment"></textarea>
+<button style="margin-top: 10px;margin-left:5px;" onclick="showRating()" class="btn btn-lg btn-success">Submit</button>   
+<br/><br/>
+<div id="response"></div> 
+</body>
+<script type="text/javascript">
+ var rating = "";
+ function starmark(item){
+     var count = item.id[0];
+     rating = count;
+     var subid = item.id.substring(1);
+     for(let i=0;i<5;i++){
+         if(i<count){
+             document.getElementById((i+1)+subid).style.color = "#fd0";
+         }
+         else{
+            document.getElementById((i+1)+subid).style.color = "black";
+         }
+     }
+ }
+
+ function showRating(){
+     var a = document.getElementById('textArea1').value;
+     if(!rating){alert('Please Select Rating')}
+     else if(!a){alert('Please Enter Your Comments')}
+     else{
+        document.getElementById('response').innerHTML = `Your Rating is ${rating} and feedback is ${a}`
+     }
+ }
+</script>
+</html>
