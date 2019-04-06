@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="searchBox" onkeypress="searchValue()" placeholder="Search Product">
+    <input type="text" id="searchBox" onkeydown="searchValue()" placeholder="Search Product">
+    <input type="radio" name="filter" onclick="priceLowToHigh(1)"> Price - Low To High
+    <input type="radio" name="filter" onclick="priceLowToHigh(2)"> Price - High To High
     <div id="grid">
     </div>
     
