@@ -3,9 +3,7 @@
     float: left;
     width: 15%;
     padding: 50px; 
-    /* max-width: 300px; */
     height: 300px;
-    /* min-height: 200px */
     margin: 10px;
     text-align: center;
     font-family: arial;
@@ -16,9 +14,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 15%;
     padding: 50px; 
-    /* max-width: 300px; */
     height: 300px;
-    /* min-height: 200px */
     margin: 10px;
     text-align: center;
     font-family: arial;

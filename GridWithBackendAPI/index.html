@@ -14,7 +14,7 @@
     <br>
     <div style="padding-left: 10%">
         <div style="text-align:left">
-                <button class="filter-button" onclick="openModal()">Filter</button>
+                <button class="filter-button" onclick="openModal()">Filter (Brand)</button>
                 <input type="radio" name="filter" onclick="priceLowToHigh(1)"> Price - Low To High
                 <input type="radio" name="filter" onclick="priceLowToHigh(2)"> Price - High To Low
         </div>
@@ -22,10 +22,12 @@
     <br>
 
     <dialog id="myDialog">
+        Products Brand<br><br>
         <div id="brandList">
 
         </div>
-        <button onclick="closeModal()">OK</button>
+        <br>
+        <button onclick="closeModal()">Submit</button>
     </dialog>
     <div id="grid">
     </div>
