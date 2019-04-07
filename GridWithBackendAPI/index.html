@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="searchBox" onkeydown="searchValue()" placeholder="Search Product">
-    <input type="radio" name="filter" onclick="priceLowToHigh(1)"> Price - Low To High
-    <input type="radio" name="filter" onclick="priceLowToHigh(2)"> Price - High To High
+    <div style="text-align: center">
+            <input type="text" id="searchBox" onkeydown="searchValue()" placeholder="Search Product ...">
+    </div>
+    <br>
+    <div style="padding-left: 10%">
+        <div style="text-align:left">
+                <button class="filter-button" onclick="openModal()">Filter</button>
+                <input type="radio" name="filter" onclick="priceLowToHigh(1)"> Price - Low To High
+                <input type="radio" name="filter" onclick="priceLowToHigh(2)"> Price - High To Low
+        </div>
+    </div>
+    <br>
+
+    <dialog id="myDialog">
+        <div id="brandList">
+
+        </div>
+        <button onclick="closeModal()">OK</button>
+    </dialog>
     <div id="grid">
     </div>
+    
     
 </body>
 <script src="js/index.js"></script>

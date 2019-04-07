@@ -1,0 +1,91 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    float: left;
+    width: 15%;
+    padding: 50px; 
+    /* max-width: 300px; */
+    height: 300px;
+    /* min-height: 200px */
+    margin: 10px;
+    text-align: center;
+    font-family: arial;
+    position: relative;
+  }
+
+  .filterCard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 15%;
+    padding: 50px; 
+    /* max-width: 300px; */
+    height: 300px;
+    /* min-height: 200px */
+    margin: 10px;
+    text-align: center;
+    font-family: arial;
+    position: relative;
+  }
+
+  img{
+      height: 65%;
+      width: 110%;
+  }
+
+  .header{
+      height:30px;
+      width: 100%;
+  }
+
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    position: absolute;
+    left: 15%;
+    bottom: 2%;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 70%;
+    font-size: 14px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+  ::placeholder {
+    font-size: 16px;
+    color: grey;
+    padding-left: 1%;
+  }
+
+  #searchBox{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 35px;
+    border-radius: 5px;
+  }
+
+  .container{
+      width:800px;float: left;
+
+  }
+
+  .filter-button{
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
