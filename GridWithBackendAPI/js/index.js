@@ -1,26 +1,31 @@
 
-let products, brandProducts;
+let products, brandProducts, filters;
 
 var a = document.getElementById('grid');
 
 function getProducts(){
+    
     fetch('http://demo1853299.mockable.io/products')
     .then(Response => Response.json())
     .then( data => {
         products = data.products;
-        var brands = [];
-        // makeDOMElement(products);
-        makeDOMElement2(products);
-        for(let i=0; i<products.length; i++){
-            brands.push(products[i].brand);
-        }
-        brandProducts = brands.filter(onlyUnique);
-        brandList(brandProducts);
+        fetch('http://demo1853299.mockable.io/filters')
+        .then(Response => Response.json())
+        .then( filterData => {
+            filters = filterData;
+            var brands = [];
+            // makeDOMElement(products);
+            makeDOMElement2(products);
+            // for(let i=0; i<products.length; i++){
+            //     brands.push(products[i].brand);
+            // }
+            // brandProducts = brands.filter(onlyUnique);
+            // brandList(brandProducts);
+    }) 
     }) 
 }
 
 function makeDOMElement2(data){
-
     for(let i=0; i<data.length; i++){
         var div1 = document.createElement('div');
         div1.setAttribute("class","card")
@@ -51,6 +56,10 @@ function makeDOMElement2(data){
 }
 
 function brandList(data){
+    data.sort();
+    for(var i = 0 ; i < data.length ; i++){
+        data[i] = data[i].charAt(0).toUpperCase() + data[i].substr(1);
+    }       
     var numOfColumns;
     if(data.length % 10 === 0){ numOfColumns = data.length / 10;}
     else {numOfColumns = (data.length / 10) + 1;}
@@ -78,19 +87,29 @@ function brandList(data){
         if(data[i+10] !== 'undefined'){text12.nodeValue = data[i+10]};
         if(data[i+20] !== 'undefined'){text13.nodeValue = data[i+20]};
         if(data[i+30] !== 'undefined'){text14.nodeValue = data[i+30]};
-        if(data[i+40] !== 'undefined'){text15.nodeValue = data[i+50]};
-        if(data[i+50] !== 'undefined'){text16.nodeValue = data[i+60]};
+        if(data[i+40] !== 'undefined'){text15.nodeValue = data[i+40]};
+        if(data[i+50] !== 'undefined'){text16.nodeValue = data[i+50]};
         
         var x = document.createElement("INPUT");
         x.setAttribute("type", "checkbox");
-        x.setAttribute("value", "a");
+        var x1=x, x2=x, x3=x, x4=x, x5=x, x6= x;
 
-        td1.innerHTML+= x.outerHTML;
-        td2.innerHTML+= x.outerHTML;
-        td3.innerHTML+= x.outerHTML;
-        td4.innerHTML+= x.outerHTML;
-        td5.innerHTML+= x.outerHTML;
-        td6.innerHTML+= x.outerHTML;
+        if(data[i]!== 'undefined'){x1.setAttribute("name", data[i])};
+        if(data[i+10] !== 'undefined'){x2.setAttribute("name", data[i+10])};
+        if(data[i+20] !== 'undefined'){x3.setAttribute("name", data[i+20])};
+        if(data[i+30] !== 'undefined'){x4.setAttribute("name", data[i+30])};
+        if(data[i+40] !== 'undefined'){x5.setAttribute("name", data[i+40])};
+        if(data[i+50] !== 'undefined'){x6.setAttribute("name", data[i+50])};
+        
+        
+        console.log(x1);
+        td1.innerHTML+= x1.outerHTML;
+        td2.innerHTML+= x2.outerHTML;
+        td3.innerHTML+= x3.outerHTML;
+        td4.innerHTML+= x4.outerHTML;
+        td5.innerHTML+= x5.outerHTML;
+        td6.innerHTML+= x6.outerHTML;
+
 
         td1.appendChild(text11);
         td2.appendChild(text12);
@@ -110,7 +129,6 @@ function brandList(data){
         table.appendChild(tr1);
         
     }
-    console.log(table);
 
 }
 
