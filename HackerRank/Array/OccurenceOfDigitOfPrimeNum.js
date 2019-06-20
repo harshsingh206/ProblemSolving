@@ -41,4 +41,3 @@ function isPrime(n){
   
   console.log(`Occurence of digit is max of number ${parseInt(maxKey)} which is occuring ${maxValue} times`);
   
-  
