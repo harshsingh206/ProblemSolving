@@ -1,5 +1,4 @@
 var a="durability",b="essence",k=3, str='', m=0, n=0;
-
 for(let i=0,j=0;i<a.length,j<b.length;i=i+k,j=j+k){
     if(i+k > a.length){
       str = str + a.substring(i,a.length);
@@ -19,6 +18,5 @@ for(let i=0,j=0;i<a.length,j<b.length;i=i+k,j=j+k){
     }
    
 }
-
 str = str + a.substring(m,a.length) + b.substring(n,b.length);
 console.log(str);
