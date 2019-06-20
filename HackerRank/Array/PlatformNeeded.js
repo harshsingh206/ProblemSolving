@@ -13,11 +13,11 @@ var plat_needed = 1,
 
 while (i < arr.length && j < dep.length) {
   if (arr[i] <= dep[j]) {
-    plat_needed = parseInt(plat_needed) + 1;
+    plat_needed++;
     i++;
     if (plat_needed > result) result = plat_needed;
   } else {
-    plat_needed = parseInt(plat_needed) - 1;
+    plat_needed--;
     j++;
   }
 }
