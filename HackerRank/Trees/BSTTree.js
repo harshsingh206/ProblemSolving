@@ -135,6 +135,21 @@ class Node{
         
         return result;
        } 
+
+     //print all ancestor of element
+     printAncestor(target){
+        let currentNode = this.root;
+        const getAncestor = (node, target) => {
+            if(!node) return false
+            if(node.value == target) return true;
+            if(getAncestor(node.left, target) || getAncestor(node.right, target)){
+                console.log(node.value);
+                return true;
+             }
+             return false
+        }
+        getAncestor(currentNode, target);
+     }
      
    }
    
