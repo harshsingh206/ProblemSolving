@@ -87,6 +87,42 @@ class LinkedList {
   
       return null
     }
+
+    lengthOfLinkedList(){
+        let currentNode = this.head
+        var count = 0;    
+        while(currentNode)  
+        {   
+            count++;  
+            currentNode = currentNode.next;  
+        }  
+        return count;
+    }
+
+    //rotate from kth node
+    rotate(k) 
+    { 
+        if (k === 0) return; 
+        let currentNode = this.head
+  
+        var count = 1; 
+        while (count < k && currentNode) 
+        { 
+            currentNode = currentNode.next; 
+            count++; 
+        } 
+        if (!currentNode) 
+            return; 
+        let kthNode = currentNode; 
+        while (currentNode.next) 
+        currentNode = currentNode.next; 
+
+        currentNode.next = head; 
+        head = kthNode.next; 
+  
+        kthNode.next = null; 
+    }
+
   }
   
   class Node {
