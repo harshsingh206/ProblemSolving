@@ -117,8 +117,8 @@ class LinkedList {
         while (currentNode.next) 
         currentNode = currentNode.next; 
 
-        currentNode.next = head; 
-        head = kthNode.next; 
+        currentNode.next = this.head; 
+        this.head = kthNode.next; 
   
         kthNode.next = null; 
     }
