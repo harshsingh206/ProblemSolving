@@ -150,7 +150,64 @@ class Node{
         }
         getAncestor(currentNode, target);
      }
-     
+
+     //lowese common ancestor of BST tree
+     commonAncestorBST(n1, n2){
+        let currentNode = this.root;
+        const getCommonAncestor = (node, target) => {
+            if(!node) return;
+            var val = node.value;
+            if(n1 < val && n2<val){
+              return commonAncestor(node.left, n1, n2);
+            }
+            if(n1<val && n2<val){
+              return commonAncestor(node.right, n1, n2);
+           }
+           console.log('lowest common ancestor value: ', val);
+           return node;
+        }
+        return getCommonAncestor(currentNode, n1, n2);
+     }
+
+     //lowese common ancestor of binary tree
+     commonAncestorBinaryTree(n1, n2){
+        let currentNode = this.root;
+        const getCommonAncestor = (node, target) => {
+            if(!node) return;
+            var val = node.value;
+            if(n1 == val || n2 ==val){
+              return node;
+            }
+            var left = commonAncestorBT(node.left, n1, n2);
+            var right = commonAncestorBT(node.right, n1, n2);
+            if(left && right){
+              return node;
+           }
+           return (left) ? left : right;
+        }
+        return getCommonAncestor(currentNode, n1, n2);
+     }
+
+     //check tree is BST or NOT
+     checkBST(){
+        let currentNode = this.root;
+        const checkTreeBST = (node) => {
+            if(!node){
+                return true; 
+             }         
+             if(node.left != null && node.left.value > node.value){ 
+               return false;
+             }
+             if(node.right !=null && node.right.value < node.value) {
+               return false;
+             }
+             if(!checkTreeBST(node.left) || !checkTreeBST(node.right)) {
+               return false;
+             }
+             return true; 
+        }
+        return checkTreeBST(currentNode);
+     }
    }
    
 
