@@ -32,7 +32,7 @@ function rearrangePositiveAndNegative(arr, n)
     } 
 } 
 
-var arr = [-1, 2, -3, 4, 5, 6, -7, 8, 9]; 
+var arr = [-1, 2, -3, 4, 5, 6, -7, 8, 9, -19, -11]; 
 var n = arr.length; 
 rearrangePositiveAndNegative(arr,n); 
 console.log("Array after rearranging: " + arr); 
